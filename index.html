@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JARVIS - Virtual Assistant Enhanced</title>
+    <link rel="shortcut icon" href="avatar.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+        <button id="themeBtn" class="theme-btn">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+
+    <!-- Main Container -->
+    <section class="main">
+        <!-- Header -->
+        <div class="header">
+            <div class="status-indicator">
+                <div class="status-dot" id="statusDot"></div>
+                <span id="statusText">Offline</span>
+            </div>
+        </div>
+
+        <!-- Avatar and Title -->
+        <div class="image-container">
+            <div class="image">
+                <img src="giphy.gif" alt="JARVIS Avatar" id="avatar">
+            </div>
+            <h1 class="title">J A R V I S</h1>
+            <p class="subtitle">Assistente Virtual Inteligente</p>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <div class="search-bar">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="searchInput" placeholder="Digite um comando ou site (ex: youtube, google, facebook...)">
+                <button class="search-btn" id="searchBtn">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Voice Input -->
+        <div class="voice-container">
+            <button class="talk" id="voiceBtn">
+                <i class="fas fa-microphone-alt"></i>
+            </button>
+            <div class="voice-text">
+                <h2 class="content" id="voiceContent">Clique no microfone ou digite um comando</h2>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="quick-actions">
+            <h3>Ações Rápidas</h3>
+            <div class="actions-grid">
+                <button class="action-btn" data-action="youtube">
+                    <i class="fab fa-youtube"></i>
+                    <span>YouTube</span>
+                </button>
+                <button class="action-btn" data-action="google">
+                    <i class="fab fa-google"></i>
+                    <span>Google</span>
+                </button>
+                <button class="action-btn" data-action="facebook">
+                    <i class="fab fa-facebook"></i>
+                    <span>Facebook</span>
+                </button>
+                <button class="action-btn" data-action="instagram">
+                    <i class="fab fa-instagram"></i>
+                    <span>Instagram</span>
+                </button>
+                <button class="action-btn" data-action="twitter">
+                    <i class="fab fa-twitter"></i>
+                    <span>Twitter</span>
+                </button>
+                <button class="action-btn" data-action="netflix">
+                    <i class="fas fa-film"></i>
+                    <span>Netflix</span>
+                </button>
+                <button class="action-btn" data-action="spotify">
+                    <i class="fab fa-spotify"></i>
+                    <span>Spotify</span>
+                </button>
+                <button class="action-btn" data-action="github">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Command History -->
+        <div class="history-container">
+            <div class="history-header">
+                <h3>Histórico de Comandos</h3>
+                <button class="clear-history" id="clearHistory">
+                    <i class="fas fa-trash"></i>
+                </button>
+            </div>
+            <div class="history-list" id="historyList">
+                <p class="no-history">Nenhum comando executado ainda</p>
+            </div>
+        </div>
+
+        <!-- Features Info -->
+        <div class="features-info">
+            <h3>Comandos Disponíveis</h3>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-clock"></i>
+                    <span>"Que horas são?" - Mostra a hora atual</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-calendar"></i>
+                    <span>"Que dia é hoje?" - Mostra a data atual</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-search"></i>
+                    <span>"Pesquisar [termo]" - Busca no Google</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-globe"></i>
+                    <span>"Abrir [site]" - Abre sites populares</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-calculator"></i>
+                    <span>"Calculadora" - Abre a calculadora</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-music"></i>
+                    <span>"Tocar música" - Abre Spotify</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <p>Processando comando...</p>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
